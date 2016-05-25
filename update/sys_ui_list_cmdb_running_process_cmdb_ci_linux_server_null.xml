@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="cmdb_ci_linux_server" relationship="" sys_domain="global" table="cmdb_running_process" version="2" view="">
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>cmdb_running_process</name>
+            <parent>cmdb_ci_linux_server</parent>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>mdingari</sys_created_by>
+            <sys_created_on>2016-05-09 14:29:54</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fb33879d4f5b1640385d89bf0210c79f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>cmdb_running_process</sys_name>
+            <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+            <sys_update_name>sys_ui_list_cmdb_running_process_cmdb_ci_linux_server_null</sys_update_name>
+            <sys_updated_by>mdingari</sys_updated_by>
+            <sys_updated_on>2016-05-09 14:29:54</sys_updated_on>
+            <sys_user display_value="Murali Dingari">cae608494fa59200d0a471dd0210c72b</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

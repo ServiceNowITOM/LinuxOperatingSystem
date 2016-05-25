@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="discovery_schedule">
+    <discovery_schedule action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <behavior/>
+        <ci_id/>
+        <ci_type/>
+        <condition/>
+        <conditional>false</conditional>
+        <disco_run_type>daily</disco_run_type>
+        <discover>CIs</discover>
+        <even_if_canceled>true</even_if_canceled>
+        <include_alive>true</include_alive>
+        <location/>
+        <log_state_changes>true</log_state_changes>
+        <max_run/>
+        <mid_server display_value="MD_Linux_Home">7507d0964fce9a00385d89bf0210c747</mid_server>
+        <name>Home Network</name>
+        <run_after/>
+        <run_as display_value="Murali Dingari">cae608494fa59200d0a471dd0210c72b</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2016-05-09 04:52:41</run_start>
+        <run_time>1970-01-01 06:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var rt = new global.DiscoveryScheduleRunType(current.disco_run_type + ''); if (rt.match() || new global.DiscoveryJob(job).isRunOnce()) { var dd = new global.Discovery(); dd.discoveryStartJob(); }]]></script>
+        <service_discovery>ci_type</service_discovery>
+        <shazzam_batch_size>5000</shazzam_batch_size>
+        <shazzam_cluster_support>true</shazzam_cluster_support>
+        <sys_class_name>discovery_schedule</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-05-09 04:53:38</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>e42f7c914fdf5e00d0a471dd0210c75d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Home Network</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>discovery_schedule_e42f7c914fdf5e00d0a471dd0210c75d</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-05-09 04:53:38</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+        <use_snmp_version>v1_v2c</use_snmp_version>
+    </discovery_schedule>
+</record_update>

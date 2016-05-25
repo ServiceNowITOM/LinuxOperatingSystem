@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_element_activity">
+    <wf_element_activity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="SSH">ebee8be6d7022100dfc260affd610368</base_provider>
+        <category>Networking</category>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description/>
+        <image>images/heisenberg_icons/workflow_ie8/provider_ssh.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"targetHostName","type":"STRING","mandatory":false}]}</input_meta>
+        <input_process_script/>
+        <input_transform>{"source":"${activityInput.targetHostName}","command":"echo \"%%interfaceList%%\";\nifconfig -s -a | awk '{print $1}'| awk 'NR &gt;1 {print }'| awk '{printf t $1} {t=\",\"}'\nRETCODE=$?;\necho \"%%\";","directory":"","credential_tag":"","midCapabilities":"2d20f2760a0006bc095bf17ae4e0d4ee","long_running":"false","must_sudo":"true"}</input_transform>
+        <local_variables>{"name":"Local","type":"DATA_OBJECT","properties":[{"name":"interfaceListStr","type":"STRING"}]}</local_variables>
+        <name>List Network Interfaces</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"interfaceList","type":"DATA_ARRAY","properties":[{"name":"Array element type: ","type":"STRING"}]},{"name":"errorCode","type":"INTEGER"}]}</output_meta>
+        <output_process_script><![CDATA[if(activityLocal.interfaceListStr !=null)	{
+	activityOutput.errorCode =0;
+	activityOutput.interfaceList= activityLocal.interfaceListStr.split(",");
+}else
+	activityOutput.errorCode =-1;
+
+
+
+]]></output_process_script>
+        <output_transform>[{"toLink":"activityLocal.interfaceListStr","description":"","to":"interfaceListStr","toType":"string","toDestination":"activityLocal","sourceLabel":"executionResult.tags[\"interfaceList\"]","from":"${executionResult.tags[\"interfaceList\"]}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description/>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-07 04:04:58</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>195188874fa65200d0a471dd0210c79a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>List Network Interfaces</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>wf_element_activity_195188874fa65200d0a471dd0210c79a</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-07 04:05:34</sys_updated_on>
+        <version_container_id>bb53cbee4f6e1200d0a471dd0210c783</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=195188874fa65200d0a471dd0210c79a"/>
+    <wf_versionable action="INSERT_OR_UPDATE">
+        <checked_out/>
+        <checked_out_by/>
+        <published>true</published>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-07 04:04:58</sys_created_on>
+        <sys_id>d95188874fa65200d0a471dd0210c79a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-07 04:05:34</sys_updated_on>
+        <valid_from>2016-04-07 04:05:34</valid_from>
+        <valid_to/>
+        <version>3</version>
+        <version_container_id>bb53cbee4f6e1200d0a471dd0210c783</version_container_id>
+        <wf_element_definition display_value="List Network Interfaces">195188874fa65200d0a471dd0210c79a</wf_element_definition>
+    </wf_versionable>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="List Network Interfaces">195188874fa65200d0a471dd0210c79a</activity_definition>
+        <condition>activityOutput.errorCode ==-1</condition>
+        <derived_definition>54cf1b6e4fae1200d0a471dd0210c74c</derived_definition>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Commands Failed</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-07 04:04:58</sys_created_on>
+        <sys_id>2d5188874fa65200d0a471dd0210c79a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-07 04:04:58</sys_updated_on>
+    </wf_condition_default>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="List Network Interfaces">195188874fa65200d0a471dd0210c79a</activity_definition>
+        <condition>activityOutput.errorCode==0</condition>
+        <derived_definition>005f536e4fae1200d0a471dd0210c74a</derived_definition>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Success</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-07 04:04:58</sys_created_on>
+        <sys_id>6d5188874fa65200d0a471dd0210c79a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-07 04:04:58</sys_updated_on>
+    </wf_condition_default>
+    <wf_versionable action="update_multiple" query="version_container_id=bb53cbee4f6e1200d0a471dd0210c783^sys_id!=d95188874fa65200d0a471dd0210c79a">
+        <published>false</published>
+    </wf_versionable>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=bb53cbee4f6e1200d0a471dd0210c783^pinned=true">
+        <new_activity_definition>195188874fa65200d0a471dd0210c79a</new_activity_definition>
+        <out_of_date>true</out_of_date>
+        <notes>There is a newer version of this activity. To update the activity, check out the workflow, select the activity, right click and select update activity to use the latest version.</notes>
+    </wf_activity>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=bb53cbee4f6e1200d0a471dd0210c783^pinned=false">
+        <activity_definition>195188874fa65200d0a471dd0210c79a</activity_definition>
+        <activity_definition_updated>true</activity_definition_updated>
+        <notes>This activity was updated to a newer version since the workflow was published.</notes>
+    </wf_activity>
+</record_update>

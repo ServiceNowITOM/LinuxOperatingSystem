@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="io_set_item">
+    <io_set_item action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sc_cat_item display_value="OneNote - 2013">b34495264fdf1200d0a471dd0210c7a6</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-05-13 03:37:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>845495264fdf1200d0a471dd0210c7a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>SCCM Deployment Variables.OneNote - 2013</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>io_set_item_845495264fdf1200d0a471dd0210c7a8</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2016-05-25 08:01:01</sys_updated_on>
+        <variable_set display_value="CSD Deployment Variables">993b165fd7500200d74460affd6103fd</variable_set>
+    </io_set_item>
+</record_update>

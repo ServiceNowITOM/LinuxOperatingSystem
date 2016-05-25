@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_scope_script_access">
+    <sys_scope_script_access action="INSERT_OR_UPDATE">
+        <example_stack_trace>glide.scheduler.worker.3
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.getCurrentStackTrace(ScopeAccessProvider.java:231)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.record(ScopeAccessProvider.java:200)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.access$100(ScopeAccessProvider.java:80)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider.recordAccess(ScopeAccessProvider.java:63)
+	com.glide.sys.fencing.dependency.ScopeAccessRecorder.record(ScopeAccessRecorder.java:13)
+	com.glide.script.system.ASystemInclude.recordCrossScopeAccess(ASystemInclude.java:123)
+	com.glide.script.system.ASystemInclude.include(ASystemInclude.java:106)
+	com.glide.script.AGlideRhinoScopeHandler.isScriptInclude(AGlideRhinoScopeHandler.java:43)
+	com.glide.script.GlideRhinoScopeHandler.found(GlideRhinoScopeHandler.java:24)
+	com.glide.script.ARhinoScope.get(ARhinoScope.java:75)
+	com.glide.script.RhinoScope.get(RhinoScope.java:51)
+	com.glide.script.PackageRhinoGlobalScope.get(PackageRhinoGlobalScope.java:34)
+	org.mozilla.javascript.ScriptableObject.getProperty(ScriptableObject.java:1478)
+	org.mozilla.javascript.ScriptRuntime.getProp(ScriptRuntime.java:724)
+	org.mozilla.javascript.gen.c2342.call(&lt;refname&gt;:1)
+	org.mozilla.javascript.gen.c2342.exec(&lt;refname&gt;)
+	com.glide.script.ScriptEvaluator.execute(ScriptEvaluator.java:233)
+	com.glide.script.ScriptEvaluator.evaluateString(ScriptEvaluator.java:105)
+	com.glide.script.ScriptEvaluator.evaluateString(ScriptEvaluator.java:72)
+	com.glide.script.ScriptEvaluator.evaluateString(ScriptEvaluator.java:63)
+	com.glide.script.Evaluator.evaluateString(Evaluator.java:91)
+	com.snc.automation.ScriptJob.execute(ScriptJob.java:38)
+	com.glide.schedule.JobExecutor.execute(JobExecutor.java:80)
+	com.glide.schedule.GlideScheduleWorker.executeJob(GlideScheduleWorker.java:191)
+	com.glide.schedule.GlideScheduleWorker.process(GlideScheduleWorker.java:135)
+	com.glide.schedule.GlideScheduleWorker.run(GlideScheduleWorker.java:57)
+</example_stack_trace>
+        <script_name>Discovery</script_name>
+        <source_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</source_scope>
+        <sys_class_name>sys_scope_script_access</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-05-09 04:56:19</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>b9fff8914f971640385d89bf0210c777</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Discovery</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>sys_scope_script_access_b9fff8914f971640385d89bf0210c777</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-05-09 04:56:19</sys_updated_on>
+        <target_scope display_value="Global">global</target_scope>
+    </sys_scope_script_access>
+</record_update>

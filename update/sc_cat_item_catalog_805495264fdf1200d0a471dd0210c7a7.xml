@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="OneNote - 2013">b34495264fdf1200d0a471dd0210c7a6</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-05-13 03:37:37</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>805495264fdf1200d0a471dd0210c7a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.OneNote - 2013</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_805495264fdf1200d0a471dd0210c7a7</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-05-13 03:37:37</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>

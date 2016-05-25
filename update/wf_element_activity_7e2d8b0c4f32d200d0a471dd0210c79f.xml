@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_element_activity">
+    <wf_element_activity action="UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="SSH">ebee8be6d7022100dfc260affd610368</base_provider>
+        <category>Networking</category>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>List different socket connection status counts&#13;
+&#13;
+established)&#13;
+ Foreign&#13;
+ FIN_WAIT2&#13;
+LAST_ACK&#13;
+CLOSING&#13;
+SYN_RECV&#13;
+ ESTABLISHED&#13;
+FIN_WAIT1&#13;
+LISTEN&#13;
+TIME_WAIT&#13;
+&#13;
+Inputs&#13;
+    targetHostName -  FQDN name if the host or IP Address&#13;
+&#13;
+Outputs&#13;
+    statusStates - JSON representation of Different Socket Connection states and their counts&#13;
+    errorCode - 0 or -1&#13;
+ &#13;
+</description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_ssh.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"targetHostName","type":"STRING","mandatory":false}]}</input_meta>
+        <input_process_script/>
+        <input_transform>{"source":"${activityInput.targetHostName}","command":"echo \"%%socketStates%%\";\nnetstat -nat | awk '{print $6}' | sort | uniq -c | sort -n | awk '{print \"\\\"\"$2\"\\\":\\\"\"$1\"\\\"\"}'|awk '{print $1}'|awk '/START/{if (x)print x;x=\"\";next}{x=(!x)?$0:x\",\"$0;}END{print x;}'| awk '{print \"{\" $1 \"}\"}'\nRETCODE=$?;\necho \"%%\";\n","directory":"","credential_tag":"","midCapabilities":"2d20f2760a0006bc095bf17ae4e0d4ee","long_running":"false","must_sudo":"false"}</input_transform>
+        <local_variables/>
+        <name>List  Socket Connection States Count</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"socketStates","type":"STRING"}]}</output_meta>
+        <output_process_script/>
+        <output_transform>[{"toLink":"activityOutput.socketStates","description":"","to":"socketStates","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags[\"socketStates\"]","from":"${executionResult.tags[\"socketStates\"]}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description>List Different Socket Connections Status Count</short_description>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-10 22:08:08</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>7e2d8b0c4f32d200d0a471dd0210c79f</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>List  Socket Connection States Count</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>wf_element_activity_7e2d8b0c4f32d200d0a471dd0210c79f</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-10 22:28:29</sys_updated_on>
+        <version_container_id>250697cc4f32d200d0a471dd0210c7f5</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=7e2d8b0c4f32d200d0a471dd0210c79f"/>
+</record_update>

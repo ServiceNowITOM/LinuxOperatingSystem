@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_element_activity">
+    <wf_element_activity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="SSH">ebee8be6d7022100dfc260affd610368</base_provider>
+        <category/>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>Report file system disk space usage, Currently this activity assumes you are connecting to target host on port 22&#13;
+&#13;
+Inputs&#13;
+    targetHostName -  FQDN name if the host or IP Address&#13;
+    mountPoint          - Mount point or File System&#13;
+&#13;
+Outputs&#13;
+    available - Available blocks in MB&#13;
+    used         - Used blocks in MB&#13;
+    errorCode - 0 or -1&#13;
+ &#13;
+    </description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_ssh.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"targetHostName","type":"STRING","mandatory":true},{"name":"mountPoint","type":"STRING","mandatory":false}]}</input_meta>
+        <input_process_script/>
+        <input_transform>{"source":"${activityInput.targetHostName}","command":"echo \"%%available%%\";\ndf -k -BM ${activityInput.mountPoint}  | tail -1 | awk '{print $4}'| head -c -2;\nRETCODE=$?;\necho \"%%\";\n\necho \"%%used%%\";\ndf -k -BM ${activityInput.mountPoint}  | tail -1 | awk '{print $3}'| head -c -2;\nRETCODE=$?;\necho \"%%\";\n\n\n","directory":"","credential_tag":"","midCapabilities":"2d20f2760a0006bc095bf17ae4e0d4ee","long_running":"false","must_sudo":"true"}</input_transform>
+        <local_variables/>
+        <name>Disk Usage</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"errorCode","type":"INTEGER"},{"name":"available","type":"STRING"},{"name":"used","type":"STRING"}]}</output_meta>
+        <output_process_script><![CDATA[if(executionResult.errorMessages == null)
+    activityOutput.errorCode = 0;
+else
+	activityOutput.errorCode = -1;
+
+if(activityOutput.available.indexOf("No such file or directory") !=-1)
+	activityOutput.errorCode = -1;
+
+if(activityOutput.used.indexOf("No such file or directory")!=-1)
+	activityOutput.errorCode = -1;]]></output_process_script>
+        <output_transform>[{"toLink":"activityOutput.available","description":"","to":"available","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags[\"available\"]","from":"${executionResult.tags[\"available\"]}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.used","description":"","to":"used","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags[\"used\"]","from":"${executionResult.tags[\"used\"]}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description/>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-06 16:43:27</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>da5565fe4f625200d0a471dd0210c71e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Disk Usage</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>wf_element_activity_da5565fe4f625200d0a471dd0210c71e</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-06 21:14:28</sys_updated_on>
+        <version_container_id>a1eddda64f465600d0a471dd0210c73e</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=da5565fe4f625200d0a471dd0210c71e"/>
+    <wf_versionable action="INSERT_OR_UPDATE">
+        <checked_out/>
+        <checked_out_by/>
+        <published>true</published>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-06 16:43:27</sys_created_on>
+        <sys_id>9e5565fe4f625200d0a471dd0210c71e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-06 21:14:28</sys_updated_on>
+        <valid_from>2016-04-06 21:14:28</valid_from>
+        <valid_to/>
+        <version>2</version>
+        <version_container_id>a1eddda64f465600d0a471dd0210c73e</version_container_id>
+        <wf_element_definition display_value="Disk Usage">da5565fe4f625200d0a471dd0210c71e</wf_element_definition>
+    </wf_versionable>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Disk Usage">da5565fe4f625200d0a471dd0210c71e</activity_definition>
+        <condition>activityOutput.errorCode ==-1</condition>
+        <derived_definition>392c26ea4fc65600d0a471dd0210c7fa</derived_definition>
+        <else_flag>true</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Command Failed</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-06 16:43:27</sys_created_on>
+        <sys_id>125565fe4f625200d0a471dd0210c71f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-06 16:43:27</sys_updated_on>
+    </wf_condition_default>
+    <wf_condition_default action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Disk Usage">da5565fe4f625200d0a471dd0210c71e</activity_definition>
+        <condition>activityOutput.errorCode ==0</condition>
+        <derived_definition>2deb6aea4fc65600d0a471dd0210c76c</derived_definition>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <name>Disk Usage Details Found</name>
+        <order/>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-06 16:43:27</sys_created_on>
+        <sys_id>de5565fe4f625200d0a471dd0210c71e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-06 16:43:27</sys_updated_on>
+    </wf_condition_default>
+    <wf_versionable action="update_multiple" query="version_container_id=a1eddda64f465600d0a471dd0210c73e^sys_id!=9e5565fe4f625200d0a471dd0210c71e">
+        <published>false</published>
+    </wf_versionable>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=a1eddda64f465600d0a471dd0210c73e^pinned=true">
+        <new_activity_definition>da5565fe4f625200d0a471dd0210c71e</new_activity_definition>
+        <out_of_date>true</out_of_date>
+        <notes>There is a newer version of this activity. To update the activity, check out the workflow, select the activity, right click and select update activity to use the latest version.</notes>
+    </wf_activity>
+    <wf_activity action="update_multiple" is_dot_walk_query="true" query="workflow_version.published=true^activity_definition.version_container_id=a1eddda64f465600d0a471dd0210c73e^pinned=false">
+        <activity_definition>da5565fe4f625200d0a471dd0210c71e</activity_definition>
+        <activity_definition_updated>true</activity_definition_updated>
+        <notes>This activity was updated to a newer version since the workflow was published.</notes>
+    </wf_activity>
+</record_update>

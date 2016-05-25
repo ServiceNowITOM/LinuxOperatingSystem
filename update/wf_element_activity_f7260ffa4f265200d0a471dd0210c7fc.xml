@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_element_activity">
+    <wf_element_activity action="UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="SSH">ebee8be6d7022100dfc260affd610368</base_provider>
+        <category/>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>Lists the IPV4 and IPV6 address associated with the interfae&#13;
+&#13;
+Inputs&#13;
+&#13;
+    targetHostName -  FQDN name of the host or IP Address&#13;
+    interface          -  Interface name&#13;
+&#13;
+Outputs&#13;
+&#13;
+  ipv4Address - IPV4 Address assciated with the Interface&#13;
+  ipv6Address - IPv6 Address associated with the interface&#13;
+ </description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_ssh.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"targetHostName","type":"STRING","mandatory":true},{"name":"interface","type":"STRING","mandatory":true}]}</input_meta>
+        <input_process_script/>
+        <input_transform>{"source":"${activityInput.targetHostName}","command":"echo \"%%ipv4Address%%\";\nifconfig ${activityInput.interface} | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'\nRETCODE=$?;\necho \"%%\";\n\necho \"%%ipv6Address%%\";\n\nifconfig ${activityInput.interface} | grep 'inet6 addr:' | awk '{ print $3}'\nRETCODE=$?;\necho \"%%\";","directory":"","credential_tag":"","midCapabilities":"2d20f2760a0006bc095bf17ae4e0d4ee","long_running":"false","must_sudo":"false"}</input_transform>
+        <local_variables/>
+        <name>List Interface IPs</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"ipv4Address","type":"STRING"},{"name":"ipv6Address","type":"STRING"},{"name":"errorCode","type":"STRING"}]}</output_meta>
+        <output_process_script><![CDATA[if(executionResult.errorMessages == null)
+    activityOutput.errorCode = 0;
+else
+	activityOutput.errorCode = -1;]]></output_process_script>
+        <output_transform>[{"toLink":"activityOutput.ipv4Address","description":"","to":"ipv4Address","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags","from":"${executionResult.tags}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.ipv6Address","description":"","to":"ipv6Address","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags","from":"${executionResult.tags}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description>Lists the IPV4 and IPV6 address associated with the interfae</short_description>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-04-06 23:46:32</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f7260ffa4f265200d0a471dd0210c7fc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>List Interface IPs</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>wf_element_activity_f7260ffa4f265200d0a471dd0210c7fc</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-06 23:49:32</sys_updated_on>
+        <version_container_id>be6da6fe4fe25200d0a471dd0210c785</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=f7260ffa4f265200d0a471dd0210c7fc"/>
+</record_update>

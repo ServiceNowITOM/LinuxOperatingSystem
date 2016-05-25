@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="task" version="2" view="ess">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="task" element="NULL" name="task" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e710086a4f231200385d89bf0210c7f7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-05-25 07:45:29</sys_created_on>
+            <sys_id>6b10086a4f231200385d89bf0210c7f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-05-25 07:45:29</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>priority</element>
+            <list_id display_value="task" element="NULL" name="task" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e710086a4f231200385d89bf0210c7f7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-05-25 07:45:29</sys_created_on>
+            <sys_id>eb10086a4f231200385d89bf0210c7f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-05-25 07:45:29</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>state</element>
+            <list_id display_value="task" element="NULL" name="task" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e710086a4f231200385d89bf0210c7f7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-05-25 07:45:29</sys_created_on>
+            <sys_id>6f10086a4f231200385d89bf0210c7f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-05-25 07:45:29</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assigned_to</element>
+            <list_id display_value="task" element="NULL" name="task" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e710086a4f231200385d89bf0210c7f7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-05-25 07:45:29</sys_created_on>
+            <sys_id>ef10086a4f231200385d89bf0210c7f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-05-25 07:45:29</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>short_description</element>
+            <list_id display_value="task" element="NULL" name="task" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e710086a4f231200385d89bf0210c7f7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-05-25 07:45:29</sys_created_on>
+            <sys_id>6310086a4f231200385d89bf0210c7f8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-05-25 07:45:29</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_class_name</element>
+            <list_id display_value="task" element="NULL" name="task" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e710086a4f231200385d89bf0210c7f7</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>system</sys_created_by>
+            <sys_created_on>2016-05-25 07:45:29</sys_created_on>
+            <sys_id>e310086a4f231200385d89bf0210c7f8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>system</sys_updated_by>
+            <sys_updated_on>2016-05-25 07:45:29</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>task</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>mdingari</sys_created_by>
+            <sys_created_on>2016-03-22 22:41:34</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>357725864f969200d0a471dd0210c7af</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>task</sys_name>
+            <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+            <sys_update_name>sys_ui_list_task_ess</sys_update_name>
+            <sys_updated_by>mdingari</sys_updated_by>
+            <sys_updated_on>2016-03-22 22:41:34</sys_updated_on>
+            <sys_user display_value="Murali Dingari">cae608494fa59200d0a471dd0210c72b</sys_user>
+            <view display_value="Self Service" name="ess">24ad37234f011200d0a471dd0210c75e</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

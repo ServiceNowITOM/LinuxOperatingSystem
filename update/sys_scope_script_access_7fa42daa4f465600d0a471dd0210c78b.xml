@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_scope_script_access">
+    <sys_scope_script_access action="INSERT_OR_UPDATE">
+        <example_stack_trace>Default-thread-1
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.getCurrentStackTrace(ScopeAccessProvider.java:231)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.record(ScopeAccessProvider.java:200)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider$ScopeAccessCache.access$100(ScopeAccessProvider.java:80)
+	com.glide.sys.fencing.dependency.ScopeAccessProvider.recordAccess(ScopeAccessProvider.java:63)
+	com.glide.sys.fencing.dependency.ScopeAccessRecorder.record(ScopeAccessRecorder.java:13)
+	com.glide.script.system.ASystemInclude.recordCrossScopeAccess(ASystemInclude.java:123)
+	com.glide.script.system.ASystemInclude.include(ASystemInclude.java:106)
+	com.glide.script.AGlideRhinoScopeHandler.isScriptInclude(AGlideRhinoScopeHandler.java:43)
+	com.glide.script.GlideRhinoScopeHandler.found(GlideRhinoScopeHandler.java:24)
+	com.glide.script.ARhinoScope.get(ARhinoScope.java:75)
+	com.glide.script.RhinoScope.get(RhinoScope.java:51)
+	org.mozilla.javascript.ScriptableObject.getProperty(ScriptableObject.java:1478)
+	org.mozilla.javascript.Context.newObject(Context.java:1104)
+	com.glide.script.RhinoObject.&lt;init&gt;(RhinoObject.java:57)
+	com.glide.script.RhinoObject.&lt;init&gt;(RhinoObject.java:49)
+	com.glide.script.GlideRhinoObject.&lt;init&gt;(GlideRhinoObject.java:40)
+	com.snc.runbook_automation.element.providers.OrchestrationActivityProvider.callMIDFinder(OrchestrationActivityProvider.java:249)
+	com.snc.runbook_automation.element.providers.OrchestrationActivityProvider.pickMIDServer(OrchestrationActivityProvider.java:227)
+	com.snc.runbook_automation.element.providers.OrchestrationActivityProvider.pickMIDServer(OrchestrationActivityProvider.java:244)
+	com.snc.runbook_automation.element.providers.SSHProvider.getAgent(SSHProvider.java:186)
+	com.snc.runbook_automation.element.providers.OrchestrationActivityProvider$1.doEvent(OrchestrationActivityProvider.java:131)
+	com.snc.runbook_automation.element.providers.OrchestrationActivityProvider.executeWithoutWorkflow(OrchestrationActivityProvider.java:107)
+	com.snc.runbook_automation.element.providers.OrchestrationActivityProvider.executeJSON(OrchestrationActivityProvider.java:636)
+	com.snc.runbook_automation.element.providers.ProviderRunner.executeWithoutWorkflow(ProviderRunner.java:27)
+	com.snc.runbook_automation.element.providers.ProviderRunner.jsStaticFunction_execute(ProviderRunner.java:48)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	java.lang.reflect.Method.invoke(Method.java:597)
+	org.mozilla.javascript.FunctionObject.doInvoke(FunctionObject.java:597)
+	org.mozilla.javascript.FunctionObject.call(FunctionObject.java:504)
+	org.mozilla.javascript.ScriptRuntime.call(ScriptRuntime.java:1227)
+	org.mozilla.javascript.gen.c6210.call(sys_script_include.3f652a7293033100c08195cf867ffb44:16)
+	org.mozilla.javascript.ScriptRuntime.call(ScriptRuntime.java:1227)
+	org.mozilla.javascript.BaseFunction.applyOrCall(BaseFunction.java:490)
+	org.mozilla.javascript.BaseFunction.execMethod(BaseFunction.java:198)
+	org.mozilla.javascript.IdFunction.call(IdFunction.java:78)
+	org.mozilla.javascript.ScriptRuntime.call(ScriptRuntime.java:1227)
+	org.mozilla.javascript.gen.c1583.call(sys_script_include.d65f78c40a0a0b6900196656f35913d3:34)
+	org.mozilla.javascript.ScriptRuntime.call(ScriptRuntime.java:1227)
+	org.mozilla.javascript.ScriptableObject.callMethod(ScriptableObject.java:1655)
+	com.glide.script.RhinoObject.callFunction(RhinoObject.java:167)
+	com.glide.script.RhinoObject.callFunction(RhinoObject.java:163)
+	com.glide.processors.xmlhttp.AJAXEvaluator.evalScriptInclude(AJAXEvaluator.java:165)
+	com.glide.processors.xmlhttp.AJAXEvaluator.evaluateAjax(AJAXEvaluator.java:84)
+	com.glide.processors.xmlhttp.AJAXEvaluator.process(AJAXEvaluator.java:62)
+	com.glide.processors.XMLHttpProcessor.processJavaAJAX(XMLHttpProcessor.java:143)
+	com.glide.processors.XMLHttpProcessor.process(XMLHttpProcessor.java:100)
+	com.glide.processors.AProcessor.runProcessor(AProcessor.java:409)
+	com.glide.processors.AProcessor.processTransaction(AProcessor.java:183)
+	com.glide.processors.ProcessorRegistry.process(ProcessorRegistry.java:165)
+	com.glide.ui.GlideServletTransaction.process(GlideServletTransaction.java:32)
+	com.glide.sys.ServletTransaction.run(ServletTransaction.java:34)
+	java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	java.lang.Thread.run(Thread.java:682)
+</example_stack_trace>
+        <script_name>MIDServerFinder</script_name>
+        <source_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</source_scope>
+        <sys_class_name>sys_scope_script_access</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-03-12 01:30:40</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>7fa42daa4f465600d0a471dd0210c78b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MIDServerFinder</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>sys_scope_script_access_7fa42daa4f465600d0a471dd0210c78b</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-03-12 01:30:40</sys_updated_on>
+        <target_scope display_value="Global">global</target_scope>
+    </sys_scope_script_access>
+</record_update>

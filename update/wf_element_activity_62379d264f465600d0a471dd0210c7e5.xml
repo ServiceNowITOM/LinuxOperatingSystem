@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_element_activity">
+    <wf_element_activity action="UPDATE">
+        <access>public</access>
+        <attributes/>
+        <base_provider display_value="SSH">ebee8be6d7022100dfc260affd610368</base_provider>
+        <category/>
+        <checked_out_by/>
+        <default_height/>
+        <default_width/>
+        <description>Report file system disk space usage, Currently this activity assumes you are connecting to target host on port 22&#13;
+&#13;
+Inputs&#13;
+    targetHostName -  FQDN name if the host or IP Address&#13;
+    mountPoint          - Mount point or File System&#13;
+&#13;
+Outputs&#13;
+    available - Available blocks in MB&#13;
+    used         - Used blocks in MB&#13;
+    errorCode - 0 or -1&#13;
+ &#13;
+    </description>
+        <image>images/heisenberg_icons/workflow_ie8/provider_ssh.png</image>
+        <input_meta>{"name":"Input","type":"DATA_OBJECT","properties":[{"name":"targetHostName","type":"STRING","mandatory":true},{"name":"mountPoint","type":"STRING","mandatory":false}]}</input_meta>
+        <input_process_script/>
+        <input_transform>{"source":"${activityInput.targetHostName}","command":"echo \"%%available%%\";\ndf -k -BM ${activityInput.mountPoint}  | tail -1 | awk '{print $4}'| head -c -2;\nRETCODE=$?;\necho \"%%\";\n\necho \"%%used%%\";\ndf -k -BM ${activityInput.mountPoint}  | tail -1 | awk '{print $3}'| head -c -2;\nRETCODE=$?;\necho \"%%\";\n\n\n","directory":"","credential_tag":"","midCapabilities":"2d20f2760a0006bc095bf17ae4e0d4ee","long_running":"false","must_sudo":"true"}</input_transform>
+        <local_variables/>
+        <name>Disk Usage</name>
+        <output_meta>{"name":"Output","type":"DATA_OBJECT","properties":[{"name":"errorCode","type":"INTEGER"},{"name":"available","type":"STRING"},{"name":"used","type":"STRING"}]}</output_meta>
+        <output_process_script><![CDATA[if(executionResult.errorMessages == null)
+    activityOutput.errorCode = 0;
+else
+	activityOutput.errorCode = -1;
+
+if(activityOutput.available.indexOf("No such file or directory") !=-1)
+	activityOutput.errorCode = -1;
+
+if(activityOutput.used.indexOf("No such file or directory")!=-1)
+	activityOutput.errorCode = -1;]]></output_process_script>
+        <output_transform>[{"toLink":"activityOutput.available","description":"","to":"available","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags[\"available\"]","from":"${executionResult.tags[\"available\"]}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""},{"toLink":"activityOutput.used","description":"","to":"used","toType":"string","toDestination":"activityOutput","sourceLabel":"executionResult.tags[\"used\"]","from":"${executionResult.tags[\"used\"]}","fromSource":"executionResult","type":"Direct","children":"[]","translation":""}]</output_transform>
+        <processing_script/>
+        <sample_payloads>{}</sample_payloads>
+        <short_description/>
+        <style/>
+        <sys_class_name>wf_element_activity</sys_class_name>
+        <sys_created_by>mdingari</sys_created_by>
+        <sys_created_on>2016-03-12 01:01:01</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>62379d264f465600d0a471dd0210c7e5</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Disk Usage</sys_name>
+        <sys_package display_value="Linux Operating System" source="x_snc_linux_operat">3e95d9e24f465600d0a471dd0210c7e8</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Linux Operating System">3e95d9e24f465600d0a471dd0210c7e8</sys_scope>
+        <sys_update_name>wf_element_activity_62379d264f465600d0a471dd0210c7e5</sys_update_name>
+        <sys_updated_by>mdingari</sys_updated_by>
+        <sys_updated_on>2016-04-06 07:14:02</sys_updated_on>
+        <version_container_id>a1eddda64f465600d0a471dd0210c73e</version_container_id>
+    </wf_element_activity>
+    <sys_translated_text action="delete_multiple" query="documentkey=62379d264f465600d0a471dd0210c7e5"/>
+</record_update>
